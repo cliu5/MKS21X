@@ -1,17 +1,13 @@
-
-// CS Dojo helped me with a lot of this code + people from other periods explained and walked me through it//
 import java.util.*;
 import java.io.*;
 
 public class WordSearch{
     private char[][]data;
-private char[][] solution;
-private int seedd;
-    private Random randg;
+    private Random randgen;
     private ArrayList<String> wordsToAdd;
     private ArrayList<String> wordsAdded;
-    
-    //idk why you need this but the person at the CS Dojo told me to do this//
+    private int seed;
+    private char[][] solution;
 
     
     public WordSearch(int rows,int cols,String filename){
@@ -19,45 +15,54 @@ private int seedd;
     }
 
 
-   public WordSearch(int rows,int cols,String filename, int seed){
+    public WordSearch(int rows,int cols,String filename, int seed){
  	data = new char[rows][cols];
-	randg = new Random((long)seed);
+	randgen = new Random((long)seed);
 	wordsToAdd = new ArrayList<String>();
 	wordsAdded = new ArrayList<String>();
-	seedd = seed;
 	solution = new char[rows][cols];
 	clear();
 	try{
 	    Scanner in = new Scanner(new File(filename));
 	    while(in.hasNext()){
-		wordsToAdd.add(in.next().toLowerCase());
+		wordsToAdd.add(in.next());
 	    }
 	} catch (FileNotFoundException e){
     	    System.out.println("File not found: " + filename);
 	}
 	addAllWords(filename);
-	for (int x = 0; x <data.length; x++){
-	    for (int y = 0; y < data[x].length; y++){
-		solution[x][y] = data[x][y];
+	for (int i = 0; i <data.length; i++){
+	    for (int x = 0; x < data[i].length; x++){
+		solution[i][x] = data[i][x];
 	    }
 	}
 
     }
 
-    public int getSeed(){
-	return seedd;
-    }
 
-
-    private void clear(){
+    public String getSolution(){
+	String ans = "";
 	for (int i = 0; i < data.length; i++){
 	    for (int x = 0; x < data[i].length; x++){
-		data[i][x] = '_';
+		ans += solution[i][x] + " ";
+	    }
+	    ans += "\n";
+	}
+	return ans;
+    }
+
+
+    
+
+    private void clear(){
+	for (int x = 0; x < data.length; x++){
+	    for (int y = 0; y < data[x].length; y++){
+		data[x][y] = '_';
 	    }
 	}
     }
 
-
+  
     public String toString(){
 	String ans = "";
 	for (int i = 0; i < data.length; i++){
@@ -66,12 +71,13 @@ private int seedd;
 	    }
 	    ans += "\n";
 	}
-	ans += (wordsAdded.toString()).substring(1,(wordsAdded.toString()).length() - 1);
-	ans += "\nSeed #: " + getSeed();
+	ans +=  (wordsAdded.toString()).substring(1,(wordsAdded.toString()).length() - 1);
+
 	return ans;
     }
 
 
+    // some of this gets confusing and people from other periods talked me through it//
     public boolean addWordHorizontal(String word,int row, int col){
 	try{
 	    for (int i = 0; i < word.length(); i++){
@@ -104,8 +110,8 @@ private int seedd;
 	return false;
 	}
     }
-
-//confusing and rquired a lot of explanation//
+    // this is basically horizontal + vertical combined//
+   
     public boolean addWordDiagonal(String word,int row, int col){
 	try{
 	    for (int i = 0; i < word.length(); i++){
@@ -122,19 +128,21 @@ private int seedd;
 	}
     }
 
+    
+    //this was confusing and I needed a lot of help//
     private boolean addWord(int row, int col, String word,  int xcor, int ycor){
 	word = word.toUpperCase();
 	if (xcor == 0 && ycor == 0){
 	    return false;
 	}
         try{
-	    for (int i = 0; i < word.length(); i++){
-		if ((data[row - i * ycor][col + i * xcor] != word.charAt(i)) && (data[row - i * ycor][col + i * xcor] != '_')){
+	    for (int x = 0; x < word.length(); x++){
+		if ((data[row - x * ycor][col + x * xcor] != word.charAt(x)) && (data[row - x * ycor][col + x * xcor] != '_')){
 		    return false;
 		}
 	    }
-	    for (int i = 0; i < word.length(); i++){
-		data[row - i * ycor][col + i * xcor] = word.charAt(i);
+	    for (int x = 0; x < word.length(); x++){
+		data[row - x * ycor][col + x * xcor] = word.charAt(x);
 	    }
 	    wordsAdded.add(word);
 	    wordsToAdd.remove(word);
@@ -144,12 +152,13 @@ private int seedd;
 	
 	}
     }
-//i had to talk to a sensei and i still don't understand this 100%, other students explained well//
+
+    // this was the worst and most confusing and I needed a lot of help//
     public boolean randomize(){
-	for (int i = 0; x < data.length; i++){
+	for (int i = 0; i < data.length; i++){
 	    for (int x = 0; x < data[i].length; x++){
 		if (data[i][x] == '_'){
-		    int num = (int)(((Math.random() + 0.04) * 100) / 4 + 65);
+		    int num = (int)(((Math.random())  * 100) / 4 + 65);
 		    data[i][x] = (char)(num);
 		}
 	    }
@@ -157,56 +166,51 @@ private int seedd;
 	return true;
     }
    
- //crystal explained this to me until I understood it//       
+        
     private boolean addAllWords(String filename){
 	int len = wordsToAdd.size() * 900;
 	for (int i = 0; i < len; i++){	
 	    if (wordsToAdd.size() == 0){
 		return true;
 	    }
-	    int x = randg.nextInt(3) - 1,
-		y = randg.nextInt(3) - 1,
-		num = randg.nextInt(wordsToAdd.size()),
-		row = randg.nextInt(data.length),
-		col = randg.nextInt(data[0].length);
+	    int x = randgen.nextInt(3) - 1,
+		y = randgen.nextInt(3) - 1,
+		num = randgen.nextInt(wordsToAdd.size()),
+		row = randgen.nextInt(data.length),
+		col = randgen.nextInt(data[0].length);
 	    String wor = wordsToAdd.get(num);
 	    addWord(row, col, wor, x, y);
 	    wordsToAdd.remove(wor);
 	}
 	return true;
     }
-// This part was confusing and I couldn't figure it out w/o help//
+    //Parse is hard to get to work, dojo help//
     public static void main(String[] args){
 	try {
 	    int row = Integer.parseInt(args[0]),
 		col = Integer.parseInt(args[1]);
-	    if (row == 0 || col == 0 || !(args[2].substring(args[2].length() - 4).equals(".txt"))){
+	    if (row == 0 || col == 0){
 		throw new ArrayIndexOutOfBoundsException();
 	    }
 	    if (args.length > 3){
 		int seed = Integer.parseInt(args[3]);
-		WordSearch ws = new WordSearch(row, col, args[2], seed);
+		WordSearch hey = new WordSearch(row, col, args[2], seed);
 		if (args.length == 5 && args[4].equals("key")){
-		    System.out.println(ws);
+		    System.out.println(hey);
 		}
 		else{
-		    ws.randomize();
-		    System.out.println(ws);
+		    hey.randomize();
+		    System.out.println(hey);
 		}
 	    }
 	    else{
-		WordSearch ws = new WordSearch(row, col, args[2]);
-		ws.randomize();
-		System.out.println(ws);
+		WordSearch hey = new WordSearch(row, col, args[2]);
+		hey.randomize();
+		System.out.println(hey);
 	    }
-
+	   
 	} catch(ArrayIndexOutOfBoundsException e){
-	    System.out.println("Please enter: \n java WordSearch <row> <col> <filename> <seed> <answers>");
-	    System.out.println("<row>: the number of rows");
-	    System.out.println("<col>: the number of columns");
-    	    System.out.println("<filename>: the name of the file");
-	    System.out.println("<seed>: the optional seed");
-	    System.out.println("<answer>: the optional key to receive solution");
+	    System.out.println("Please enter: rows, columns, filename, seed (optional), answer (optional)");
 	}
     }
 
