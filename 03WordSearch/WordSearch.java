@@ -5,11 +5,13 @@ import java.io.*;
 
 public class WordSearch{
     private char[][]data;
+private char[][] solution;
+private int seedd;
     private Random randg;
     private ArrayList<String> wordsToAdd;
     private ArrayList<String> wordsAdded;
-    private int seedd;
-    private char[][] solution;
+    
+    //idk why you need this but the person at the CS Dojo told me to do this//
 
     
     public WordSearch(int rows,int cols,String filename){
@@ -28,7 +30,7 @@ public class WordSearch{
 	try{
 	    Scanner in = new Scanner(new File(filename));
 	    while(in.hasNext()){
-		wordsToAdd.add(in.next());
+		wordsToAdd.add(in.next().toLowerCase());
 	    }
 	} catch (FileNotFoundException e){
     	    System.out.println("File not found: " + filename);
@@ -44,17 +46,6 @@ public class WordSearch{
 
     public int getSeed(){
 	return seedd;
-    }
-
-    public String getSolution(){
-	String ans = "";
-	for (int i = 0; i < data.length; i++){
-	    for (int x = 0; x < data[i].length; x++){
-		ans += solution[i][x] + " ";
-	    }
-	    ans += "\n";
-	}
-	return ans;
     }
 
 
@@ -75,8 +66,8 @@ public class WordSearch{
 	    }
 	    ans += "\n";
 	}
-	ans += "Words To Find: " + (wordsAdded.toString()).substring(1,(wordsAdded.toString()).length() - 1);
-	ans += "\nSeed: " + getSeed();
+	ans += (wordsAdded.toString()).substring(1,(wordsAdded.toString()).length() - 1);
+	ans += "\nSeed #: " + getSeed();
 	return ans;
     }
 
@@ -114,7 +105,7 @@ public class WordSearch{
 	}
     }
 
-
+//confusing and rquired a lot of explanation//
     public boolean addWordDiagonal(String word,int row, int col){
 	try{
 	    for (int i = 0; i < word.length(); i++){
@@ -153,7 +144,7 @@ public class WordSearch{
 	
 	}
     }
-
+//i had to talk to a sensei and i still don't understand this 100%, other students explained well//
     public boolean randomize(){
 	for (int i = 0; x < data.length; i++){
 	    for (int x = 0; x < data[i].length; x++){
@@ -166,7 +157,7 @@ public class WordSearch{
 	return true;
     }
    
-        
+ //crystal explained this to me until I understood it//       
     private boolean addAllWords(String filename){
 	int len = wordsToAdd.size() * 900;
 	for (int i = 0; i < len; i++){	
