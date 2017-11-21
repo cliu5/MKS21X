@@ -1,5 +1,5 @@
 
-// CS Dojo helped me with a lot of this code//
+// CS Dojo helped me with a lot of this code + people from other periods explained and walked me through it//
 import java.util.*;
 import java.io.*;
 
