@@ -13,5 +13,5 @@ abstract Class LibraryBook extends Book implements Comparable<LibraryBook>{
     }
     public abstract void returned(){
     }
-    public abstrat String circulationStatus(){
+    public abstract String circulationStatus(){
     }
