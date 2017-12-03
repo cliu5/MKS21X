@@ -18,7 +18,7 @@ public class Book{
     return title;
   }
   public String getISBN(){
-    return ISBN
+    return ISBN;
   }
   public String toString(){
     return title+" "+ author + " "+ISBN;
