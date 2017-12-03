@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 public class SuperArrayIterator implements Iterator<String>{
 private String[] data;
 private int current;
