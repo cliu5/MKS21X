@@ -21,18 +21,17 @@ public class OrderedSuperArray extends SuperArray{
     }
 
     public boolean add(String element) {
-	int i = 0;
-	boolean ans = true;
-	if (ans==true){ 
-		for (int i=0;i<size;i++){
-			if (element.compareTo(getData()[i])>=0){
-	    			super.add(i, element);
-	    }
-	    i ++;
+	int i = findIndexBinary(element);
+	if (i>=size()){
+		super.add(element);
 	}
-	return ans;
+	else{
+		super.add(x,element);
+	}
+	return true;
     }
-}
+	
+	
 public String set(int index, String element){
 	throw new UnsupportedOperationException();
     }
@@ -55,9 +54,9 @@ public String set(int index, String element){
 //CS DOJO HELP DID NOT DO ALONE//
 
     private int findIndexBinary(String val){
-	int start = 0
+	int start = 0;
 	int end = size();
-	while (start < end){
+	while (start != end){
 	    if (get((start + end)/2).compareTo(val) > 0){
 		end = (start + end) / 2;
 	    }
@@ -72,9 +71,9 @@ public String set(int index, String element){
     
 
     public int indexOfBinary(String element){
-       	int start = 0
+       	int start = 0;
 	int end = size;
-	while (start < end){
+	while (start != end){
 	    if (get((start + end)/2+1).compareTo(element) > 0){
 		end = (start + end) / 2;
 	    }
@@ -92,7 +91,7 @@ public String set(int index, String element){
     }
 //CSDOJO HELP //
     public int lastIndexOfBinary(String element){
-	int start = indexOfBinary(element)
+	int start = indexOfBinary(element);
 	int end = size;
 	while (start != end){
 	    if (get((start + end)/2+1).compareTo(element) > 0){
