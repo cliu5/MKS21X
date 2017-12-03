@@ -151,5 +151,29 @@ private String[] data;
 	}
 	return false;
     }
-    
+    public Iterator <String> iterator(){
+	    return new ArrayIter(this);
+    }
+	private class ArrayIter implements Iterator<String>{
+	private int index;
+	private SuperArray array;
+	
+	public ArrayIter(SuperArray x){
+	    index = 0;
+	    array = new SuperArray(x.size());
+	    for (int i = 0; i < x.size(); i++){
+		array.add(x.get(i));
+	    }
+	}
+
+	public boolean hasNext(){
+	    return array.size() != 0;
+	}
+
+	public String next(){
+	if (hasNext()){
+	    index++;
+	    return array.remove(0);
+	}
+    }
 }
