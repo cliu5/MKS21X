@@ -87,9 +87,14 @@ public String set(int index, String element){
 	    else {
 		start = (start + end) / 2 + 1;
 	    }
+	}
+	    if (get(start)!=element){
+		    return -1;
+	    }
+	    
 	return start;
     }
-    }
+    
 //CSDOJO HELP //
     public int lastIndexOfBinary(String element){
 	int start = indexOfBinary(element);
@@ -109,6 +114,10 @@ public String set(int index, String element){
 		start = (start + end) / 2 + 1;
 	    }
 	}
+	    if (get(start)!=element){
+		    return -1;
+	    }
+	    
 	return start;
     }
 }
