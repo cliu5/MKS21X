@@ -92,8 +92,9 @@ private String[] data;
 	    if (data[i].equals(element)){
 		return i;
 	    }
+	}
 	    return -1;
-		}
+		
     }
 		
     public int lastIndexOf(String element){
