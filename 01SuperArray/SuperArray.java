@@ -55,7 +55,7 @@ private String[] data;
     public String set(int index, String element){
 	String temp;
 	if (index<0||index>=size){
-	    throw new IndexOutofBoundsException();
+	    throw new IndexOutOfBoundsException();
 	}
 	else{
 	    temp=data[index];
@@ -130,11 +130,11 @@ private String[] data;
 	String temp  = data[index];
 	String[] temp2 = new String[size - 1];
 	for (int i = 0; i < index; i++){
-        temp2[x] = data[x];
+        temp2[i] = data[i];
 	}
 	size--;
 	for (int i = index; i < size; i++){
-	temp2[x] = data[x+1];
+	temp2[i] = data[i+1];
 	}
 	data=temp2;
 	return temp;
