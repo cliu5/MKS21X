@@ -1,7 +1,8 @@
 public abstract class LibraryBook extends Book implements Comparable<LibraryBook>{
     private String callNumber;
     public LibraryBook(String _author, String _title, String _ISBN, String _callNumber){
-	super(_author,_title,_ISBN,_callNumber);
+	super(_author,_title,_ISBN);
+	callNumber=_callNumber
     }
     public string getCallNumber(){
 	return callNumber;
