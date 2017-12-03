@@ -7,6 +7,10 @@ private String[] data;
 	data= new String[10];
 	size=0;
     }
+	public SuperArray(int _startingcapacity){
+		data=new String[_startingcapacity];
+		size=0;
+	}
     //1.//
     public void clear(){
 	data= new String[data.length];
@@ -22,20 +26,18 @@ private String[] data;
     }
      //3.//
     public boolean add(String element){
-	if(size!=data.length){
+	if(size==data.length){
+		resize();
+	}
 	    data[size]=element;
 	    size++;
 	    return true;
-	else{
-	    resize();
-	    }
-	}
     }
     //4.//
     public String toString(){
 	//Needed some help with this kept getting errors//
 	String temp = "[";
-	for (int i=0; I< size;i++){
+	for (int i=0; i< size;i++){
 	    temp+=data[i]+",";
 	}
 	return temp.substring(0,temp.length()-2)  + "]";
@@ -43,10 +45,9 @@ private String[] data;
     //5.//
     public String get(int index){
 	if (index<0||index>=size){
-	    System.out.println("WRONG!!!!");
-	    return null;
+	    throw new IndexOutOfBoundsException();
 	}
-	else{
+	    else{
 	    return data[index];
 	}
     }
@@ -54,8 +55,7 @@ private String[] data;
     public String set(int index, String element){
 	String temp;
 	if (index<0||index>=size){
-	    System.out.println("WRONG!!!!!");
-	    return null;
+	    throw new IndexOutofBoundsException();
 	}
 	else{
 	    temp=data[index];
@@ -82,8 +82,9 @@ private String[] data;
 	    if (data[i].equals(element)){
 		return true;
 	    }
-	    return false;
 	}
+	    return false;
+	
     }
     //9.//
     public int indexOf(String element){
@@ -100,13 +101,14 @@ private String[] data;
 	    if (data[i].equals(element)){
 		return i;
 	    }
+	}
 	    return -1
-		}
+		
     }
     //10.//
     public void add(int index, String element){
 	if (index<0||index>=size){
-	    System.out.println("WRONG!!!!!!!!!!");
+	    throw new IndexOutOfBoundsException();
 	}
 	if(index==size){
 	    add(element);
@@ -114,7 +116,7 @@ private String[] data;
 	if (index<size){
 	    resize();
 	    size++;
-	    for (int i=size-1;i>index;i=){
+	    for (int i=size-1;i>index;i--){
 		data[i]=data[i-1];
 	    }
 	    data[index]=element;
@@ -123,8 +125,7 @@ private String[] data;
     //11.//
     public String remove(int index){
 	if (index < 0 || index >= size){
-	    System.out.println("WRONG!!!!!");
-	    return null;
+	    throw new IndexOutOfBoundsException();
 	}
 	String temp  = data[index];
 	String[] temp2 = new String[size - 1];
