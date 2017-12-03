@@ -26,7 +26,7 @@ public class OrderedSuperArray extends SuperArray{
 		super.add(element);
 	}
 	else{
-		super.add(x,element);
+		super.add(i,element);
 	}
 	return true;
     }
@@ -72,7 +72,7 @@ public String set(int index, String element){
 
     public int indexOfBinary(String element){
        	int start = 0;
-	int end = size;
+	int end = size();
 	while (start != end){
 	    if (get((start + end)/2+1).compareTo(element) > 0){
 		end = (start + end) / 2;
@@ -98,7 +98,7 @@ public String set(int index, String element){
 //CSDOJO HELP //
     public int lastIndexOfBinary(String element){
 	int start = indexOfBinary(element);
-	int end = size;
+	int end = size();
 	while (start != end){
 	    if (get((start + end)/2+1).compareTo(element) > 0){
 		end = (start + end) / 2;
