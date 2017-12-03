@@ -1,4 +1,6 @@
-public class SuperArray{
+import java.util.*;
+import java.io.*;
+public class SuperArray implements Iterable <String>{
 private String[] data;
     private int size;
     //Phase 1//
