@@ -149,5 +149,10 @@ private String[] data;
 	return false;
     }
     
+public static void main(String[] args){
+	SuperArray x = new SuperArray();
+	x.add("a");
+    }
+}
 
     //Crystal Wang from Period 10 helped me with the majority of Phase 3//
