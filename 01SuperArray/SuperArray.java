@@ -92,7 +92,7 @@ private String[] data;
 	    if (data[i].equals(element)){
 		return i;
 	    }
-	    return -1
+	    return -1;
 		}
     }
 		
@@ -102,7 +102,7 @@ private String[] data;
 		return i;
 	    }
 	}
-	    return -1
+	    return -1;
 		
     }
     //10.//
@@ -141,7 +141,7 @@ private String[] data;
     }
 
     //12.//
-    public boolean remove(String){
+    public boolean remove(String element){
 	if(contains(element)){
 	    remove(indexOf(element));
 	    return true;
