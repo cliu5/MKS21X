@@ -1,6 +1,6 @@
 public class Barcode {
   private String zip;
-public match = new String[10];
+public String[]match = new String[10];
 	match[1]=  ":::||";
 match[2]=  "::|:|";
 match[3]=  "::||:";
