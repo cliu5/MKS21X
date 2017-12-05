@@ -4,7 +4,7 @@ public class Barcode {
     if (zip.length!=5|| (text.matches("^[0-9]*$"))) {
     zip=_zip;
     }
-    throw new IllegalArgumentException;
+    throw new IllegalArgumentException();
 
 }
 }
