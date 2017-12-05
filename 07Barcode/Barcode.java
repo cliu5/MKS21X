@@ -7,4 +7,10 @@ public class Barcode {
     throw new IllegalArgumentException();
 
 }
+  public String toString(){
+	return getCode + "(" + getZip + ")";
+    }
+    public int compareTo(Barcode other){
+	return zip.compareTo(other);
+    }
 }
