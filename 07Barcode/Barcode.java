@@ -54,9 +54,10 @@ private int zipToInt(){
 	    		if (n == -1){
 				ans=false;
 			}
+		}
 		return ans;
-	}
 	
+	}
 	
 	
 	
