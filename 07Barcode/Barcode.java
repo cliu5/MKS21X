@@ -69,10 +69,28 @@ private int zipToInt(){
 	
 	
 	public static String toZip(String code){
-		
-	return null;
-    }
+		if (!(checkSum(code)&&allCode(code)&&frontendBarlength(code))){
+			throw IllegalArgumentException();
+		}
+		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+		ans="";
+		ArrayList<String> TEMP = new ArrayList<String>();
+		for (int x = 0; x < 10; x++){
+	    		TEMP.add(bus[x]);
+		}
+			for (int i=0;i<25;i++){
+	    			int  n = TEMP.indexOf(code.substring(i, i + 5));
+			}
+	}
+				
 	
+
+	
+// helper for toZip//
+	private static String(int x){
+		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+		return bus[x];
+	}
 	
 	public String getCode(){
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
