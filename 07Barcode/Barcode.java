@@ -73,7 +73,7 @@ private int zipToInt(){
 			throw IllegalArgumentException();
 		}
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		ans="";
+		String ans="";
 		ArrayList<String> TEMP = new ArrayList<String>();
 		for (int x = 0; x < 10; x++){
 	    		TEMP.add(bus[x]);
