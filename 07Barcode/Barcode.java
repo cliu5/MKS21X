@@ -78,14 +78,18 @@ private int zipToInt(){
 		if ((checkSum(code)!=true || frontendBarlength(code)!=true )){
 			throw new IllegalArgumentException();
 		}
+		code=code.substring(1,31);
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		String ans="";
 		ArrayList<String> TEMP = new ArrayList<String>();
-		for (int x = 0; x < 10; x++){
+		for (int x = 0; x < 10; x+=4){
 	    		TEMP.add(bus[x]);
 		}
 			for (int i=0;i<25;i++){
 	    			int  n = TEMP.indexOf(code.substring(i, i + 5));
+				if (n == -1){
+					throw new IllegalArgumentException();
+	    			}
 				ans+=n;
 			}
 		return ans;
