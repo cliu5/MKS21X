@@ -80,7 +80,9 @@ private int zipToInt(){
 		}
 			for (int i=0;i<25;i++){
 	    			int  n = TEMP.indexOf(code.substring(i, i + 5));
+				ans+=n;
 			}
+		return ans;
 	}
 				
 	
