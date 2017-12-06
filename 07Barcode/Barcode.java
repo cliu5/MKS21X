@@ -48,6 +48,7 @@ private int zipToInt(){
 	
 	private static boolean allCode(String code){
 		boolean ans = true;
+		return ans;
 	}
 	
 	
