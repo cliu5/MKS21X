@@ -36,10 +36,15 @@ private int zipToInt(){
 
     public static String toCode(String zip){
 	    Barcode x=new Barcode(zip);
-	    if (zip.length()!=5|| (zip.matches("^[0-9]*$"))){
-	    return x.getCode();
+	    for (int x = 0; x < zip.length(); x++){
+		  //ppl helped me w this//
+	    if ("0123456789".indexOf(zip.substring(x,x+1)) == -1){
+		throw new IllegalArgumentException();
 	    }
-	    throw new IllegalArgumentException();
+	}
+	    
+	    
+	    return x.getCode();
     }
 	
 	//find the coded version of an int to help with throwing stuff for toZip//
@@ -47,7 +52,7 @@ private int zipToInt(){
 		code = code.substring(1, 31);
 		int tot=0;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25;i+=4){
+		for (int i=0;i<25;i+=5){
 			int  x = code.indexOf(code.substring(i, i + 5));
 			tot+=x;}
 		return code.substring(25,30).equals(bus[tot%10]);
@@ -57,7 +62,7 @@ private int zipToInt(){
 		code = code.substring(1, 31);
 		boolean ans = true;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25;i+=4){
+		for (int i=0;i<25;i+=5){
 			int  x = code.indexOf(code.substring(i, i + 5));
 	    		if (x == -1){
 				ans=false;
