@@ -25,7 +25,8 @@ private int zipToInt(){
     }
 
     public int compareTo(Barcode other){
-	return zipToInt() - other.ziptoInt() ;
+	    x= Barcode other;
+	return zipToInt() - x.ziptoInt() ;
     }
 
     public static String toCode(String zip){
