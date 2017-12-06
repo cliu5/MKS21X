@@ -6,11 +6,17 @@ public class Barcode implements Comparable<Barcode>{
 	
 	
   public Barcode(String zip){
-    if (zip.length()!=5|| (zip.matches("^[0-9]*$"))) {
+	  for (int x = 0; x < zip.length(); x++){
+		  //ppl helped me w this//
+	    if ("0123456789".indexOf(zip.substring(x,x+1)) == -1){
+		throw new IllegalArgumentException();
+	    }
+	}
+	if (zip.length() != 5){
+	    throw new IllegalArgumentException();
+	}
+    
     this.zip=zip;
-    }
-    throw new IllegalArgumentException();
-
 
 }
 	
