@@ -36,15 +36,22 @@ private int zipToInt(){
 	    throw new IllegalArgumentException();
     }
 	
-	//find the coded version of an int to help w/ throwing stuff for toZip//
+	//find the coded version of an int to help with throwing stuff for toZip//
 	private static boolean checkSum(String code){
 		int tot=0;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25;i++){
+		for (int i=0;i<25;i+=4){
 			int  x = code.indexOf(code.substring(i, i + 5));
 			tot+=x;}
 		return code.substring(25,30).equals(bus[tot%10]);
 	}
+	
+	private static boolean allCode(String code){
+		boolean ans = true;
+	}
+	
+	
+	
 	
 	public static String toZip(String code){
 		
