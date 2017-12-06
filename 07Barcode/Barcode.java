@@ -80,7 +80,7 @@ private int zipToInt(){
 	
 	//dis was hard + needed help//
 	public static String toZip(String code){
-		if (frontendBarlength(code)){
+		if (frontendBarlength(code)&&checkSum(code)){
 	    throw new IllegalArgumentException();
 	}
 		code=code.substring(1,31);
@@ -98,9 +98,7 @@ private int zipToInt(){
 				ans+=n;
 				i+=4;
 			}
-		if(allCode(code)&&checkSum(code)){
-		return ans;}
-		throw new IllegalArgumentException();
+		
 	}
 				
 	
