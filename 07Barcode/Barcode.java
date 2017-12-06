@@ -82,7 +82,7 @@ private int zipToInt(){
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		String ans="";
 		ArrayList<String> TEMP = new ArrayList<String>();
-		for (int x = 0; x < 10; x+=4){
+		for (int x = 0; x < 10; x++){
 	    		TEMP.add(bus[x]);
 		}
 			for (int i=0;i<25;i++){
@@ -91,6 +91,7 @@ private int zipToInt(){
 					throw new IllegalArgumentException();
 	    			}
 				ans+=n;
+				i+=4;
 			}
 		return ans;
 	}
