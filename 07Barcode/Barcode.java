@@ -36,9 +36,9 @@ private int zipToInt(){
 
     public static String toCode(String zip){
 	    Barcode x=new Barcode(zip);
-	    for (int x = 0; x < zip.length(); x++){
+	    for (int i = 0; i < zip.length(); i++){
 		  //ppl helped me w this//
-	    if ("0123456789".indexOf(zip.substring(x,x+1)) == -1){
+	    if ("0123456789".indexOf(zip.substring(i,i+1)) == -1){
 		throw new IllegalArgumentException();
 	    }
 	}
