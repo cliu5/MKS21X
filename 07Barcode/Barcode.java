@@ -98,8 +98,9 @@ private int zipToInt(){
 				ans+=n;
 				i+=4;
 			}
-		
+		return ans;
 	}
+
 				
 	
 
