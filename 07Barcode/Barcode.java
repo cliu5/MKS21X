@@ -75,7 +75,7 @@ private int zipToInt(){
 	
 	
 	public static String toZip(String code){
-		if ((checkSum(code)!=true && frontendBarlength(code)!=true )){
+		if ((checkSum(code)!=true || frontendBarlength(code)!=true )){
 			throw new IllegalArgumentException();
 		}
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
