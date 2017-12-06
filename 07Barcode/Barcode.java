@@ -59,7 +59,9 @@ private int zipToInt(){
 	
 	}
 	
-	
+	//more boolean methods to help with organizing throw if statements//
+	private static boolean frontendBarlength(String code){
+		return code.length() == 32 && code.charAt(0) == '|' && code.charAt(code.length() - 1) == '|'
 	
 	public static String toZip(String code){
 		
