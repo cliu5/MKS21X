@@ -85,12 +85,7 @@ private int zipToInt(){
 				
 	
 
-	
-// helper for toZip//
-	private static String(int x){
-		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		return bus[x];
-	}
+
 	
 	public String getCode(){
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
