@@ -38,6 +38,7 @@ private int zipToInt(){
 	
 	//find the coded version of an int to help with throwing stuff for toZip//
 	private static boolean checkSum(String code){
+		code = code.substring(1, 31);
 		int tot=0;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		for (int i=0;i<25;i+=4){
@@ -47,6 +48,7 @@ private int zipToInt(){
 	}
 	
 	private static boolean allCode(String code){
+		code = code.substring(1, 31);
 		boolean ans = true;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		for (int i=0;i<25;i+=4){
