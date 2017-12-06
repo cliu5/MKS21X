@@ -75,7 +75,7 @@ private int zipToInt(){
 	
 	
 	public static String toZip(String code){
-		if frontendBarlength{
+		if (frontendBarlength(code)){
 	    throw new IllegalArgumentException();
 	}
 		code=code.substring(1,31);
