@@ -19,10 +19,13 @@ String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|",
 	return getCode() + " (" + zip + ")";
     }
 	
-	
-	
+	// make compare to easier//
+private int zipToInt(){
+	return Integer.parseInt(zip);
+    }
+
     public int compareTo(Barcode other){
-	return zip.Integer.parseInt() - other.Integer.parseInt() ;
+	return zipToInt() - other.ziptoInt() ;
     }
 
     public static String toCode(String zip){
@@ -33,8 +36,13 @@ String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|",
 	    throw new IllegalArgumentException();
     }
 	
-	public static String toZip(String code){
+	//find the coded version of an int to help w/ throwing stuff for toZip//
+	private static String barToChar(int x){
+		return bus[x];
+	}
 	
+	public static String toZip(String code){
+	return null;
     }
 	
 	
