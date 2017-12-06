@@ -73,7 +73,7 @@ private int zipToInt(){
 	}
 	
 	
-	
+	//dis was hard + needed help//
 	public static String toZip(String code){
 		if (frontendBarlength(code)){
 	    throw new IllegalArgumentException();
@@ -93,7 +93,9 @@ private int zipToInt(){
 				ans+=n;
 				i+=4;
 			}
-		return ans;
+		if(allCode(code)&&checkSum(code)){
+		return ans;}
+		throw new IllegalArgumentException();
 	}
 				
 	
