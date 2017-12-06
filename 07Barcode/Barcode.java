@@ -49,7 +49,7 @@ private int zipToInt(){
 	private static boolean allCode(String code){
 		boolean ans = true;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25,i+=4){
+		for (int i=0;i<25;i+=4){
 			int  x = code.indexOf(code.substring(i, i + 5));
 	    		if (n == -1){
 				ans=false;
