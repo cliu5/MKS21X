@@ -1,7 +1,6 @@
 public class Driver{ 
 public static void main(String[] args){
-
-	//	Barcode e = new Barcode("asdfd"); //Contains non-barcode characters, should throw IllegalArgumentException
+	Barcode e = new Barcode("asdfd"); //Contains non-barcode characters, should throw IllegalArgumentException
 	//	Barcode f = new Barcode("1234"); //Invalid length, should throw IllegalArgumentException
 
 	//      System.out.println(Barcode.toCode("00294")); // |||:::||:::::|:||:|:::|::|:|:|:|
