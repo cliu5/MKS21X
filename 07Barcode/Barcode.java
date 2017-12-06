@@ -37,12 +37,17 @@ private int zipToInt(){
     }
 	
 	//find the coded version of an int to help w/ throwing stuff for toZip//
-	private static String barToChar(int x){
+	private static boolean checkSum(String code){
+		int tot=0;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		return bus[x];
+		for (int i=0;i<25;i++){
+			int  x = code.indexOf(code.substring(x, x + 5));
+			tot+=x;}
+		return code.subString(25,30).equals(bus[tot%10]);
 	}
 	
 	public static String toZip(String code){
+		
 	return null;
     }
 	
