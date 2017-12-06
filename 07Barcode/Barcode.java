@@ -41,7 +41,7 @@ private int zipToInt(){
 		int tot=0;
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		for (int i=0;i<25;i++){
-			int  x = code.indexOf(code.substring(x, x + 5));
+			int  x = code.indexOf(code.substring(i, i + 5));
 			tot+=x;}
 		return code.substring(25,30).equals(bus[tot%10]);
 	}
