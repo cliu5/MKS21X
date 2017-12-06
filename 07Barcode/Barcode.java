@@ -10,7 +10,7 @@ public class Barcode implements Comparable<Barcode>{
     this.zip=zip;
     }
     throw new IllegalArgumentException();
-String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+
 
 }
 	
@@ -38,6 +38,7 @@ private int zipToInt(){
 	
 	//find the coded version of an int to help w/ throwing stuff for toZip//
 	private static String barToChar(int x){
+		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 		return bus[x];
 	}
 	
@@ -47,6 +48,7 @@ private int zipToInt(){
 	
 	
 	public String getCode(){
+		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 	String ans = "|";
     	int check = 0;
     for (int i = 0; i < zip.length();i++){
