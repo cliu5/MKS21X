@@ -26,6 +26,31 @@ public static void selectionSort(int[] data){
 	    
 	}
   }
+
+	 public static boolean isSorted(int[]ary){                                       
+        for(int i = 0; i < ary.length - 1 ; i++){                                   
+            if(ary[i] > ary[i+1]){                                                  
+                return false;                                                       
+            }                                                                       
+        }                                                                           
+        return true;                                                                
+    }               
+	
+	private static void swap(int[]ary,int a, int b){
+    int c =ary[a];
+    ary[a] = ary[b];
+    ary[b] = c;
+}
+	
+public static void insertionSort(int[] data){
+	for (int i=0;i<data.length;i++){
+	while(index>0 &&data[index]<data[index-1]){
+		swap(data, index,index-1);
+		j--;
+	}
+	
+		
+		
   
   public static void main(String[]artie){                                         
         int[] randish = new int[5];                                                
