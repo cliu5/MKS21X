@@ -12,16 +12,16 @@ public static void selectionSort(int[] data){
   int currentSmallest=0;
   int currentSmallestIndex=0;
 	for (int i = 0; i < data.length; i++){
-      int temp = data[i];
-	    int currentSmallest = data[i];
-	    int currentSmallestIndex = i;
+      	temp = data[i];
+	currentSmallest = data[i];
+	currentSmallestIndex = i;
 	    for (int x = i; x < data.length; x++){
 		    if (currentSmallest > data[x]){
 		    currentSmallest=data[x];
         currentSmallestIndex=x;
 		     }
 	    }
-	    data[index] = data[currentSmallest];
+	    data[currentSmallestIndex] = data[currentSmallest];
 	    data[currentSmallestIndex] = temp;
 	}
   }
