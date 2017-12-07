@@ -14,15 +14,14 @@ public static void selectionSort(int[] data){
 	for (int i = 0; i < data.length; i++){
       	temp = data[i];
 	currentSmallest = data[i];
-	currentSmallestIndex = i;
 	    for (int x = i; x < data.length; x++){
 		    if (currentSmallest > data[x]){
 		    currentSmallest=data[x];
         		currentSmallestIndex=x;
 		     }
 	    }
-	    data[currentSmallestIndex] = data[i];
-	    data[i] = temp;
+	    data[currentSmallestIndex] = temp;
+	    data[x] = currentSmallest;
 	}
   }
   
