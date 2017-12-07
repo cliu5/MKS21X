@@ -4,8 +4,7 @@ public class Sorts{
 	return "09.Liu.Claire"; 
     }
   
-currsmalles=smallest
-	currmsalest index=index
+
 	
     
     
