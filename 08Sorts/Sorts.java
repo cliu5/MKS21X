@@ -37,7 +37,7 @@ public static void selectionSort(int[] data){
         System.out.println(Arrays.toString(randish));                               
                                                                                     
     }                                                                               
-} 
-}
+
+
   
 }
