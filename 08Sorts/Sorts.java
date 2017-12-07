@@ -18,11 +18,11 @@ public static void selectionSort(int[] data){
 	    for (int x = i; x < data.length; x++){
 		    if (currentSmallest > data[x]){
 		    currentSmallest=data[x];
-        currentSmallestIndex=x;
+        		currentSmallestIndex=x;
 		     }
 	    }
-	    data[currentSmallestIndex] = data[currentSmallest];
-	    data[currentSmallestIndex] = temp;
+	    data[currentSmallestIndex] = data[i];
+	    data[i] = temp;
 	}
   }
   
