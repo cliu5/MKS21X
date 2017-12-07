@@ -44,6 +44,7 @@ public static void selectionSort(int[] data){
 	
 public static void insertionSort(int[] data){
 	for (int i=0;i<data.length;i++){
+		int index=i;
 	while(index>0 &&data[index]<data[index-1]){
 		swap(data, index,index-1);
 		j--;
