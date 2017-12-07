@@ -4,7 +4,9 @@ public class Sorts{
 	return "09.Liu.Claire"; 
     }
   
-
+currsmalles=smallest
+	currmsalest index=index
+	
     
     
 public static void selectionSort(int[] data){
@@ -20,8 +22,9 @@ public static void selectionSort(int[] data){
         		currentSmallestIndex=x;
 		     }
 	    }
-	    data[currentSmallestIndex] = temp;
-	    data[x] = currentSmallest;
+		data[currentSmallestIndex] = temp;
+	    data[i] = currentSmallest;
+	    
 	}
   }
   
