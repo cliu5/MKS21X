@@ -53,19 +53,17 @@ public static void insertionSort(int[] data){
 }
 	
 public static void bubbleSort(int[] data){
-	int swapCount=0;
-	while(!isSorted(data)){
-		for (int i=0;i<data.length;i++){
-			if(data[i]>data[i+1]){
-				swap(data,i,i+1);
-				swapCount++;
-			}
-		}
-		if (swapCount==0){
-			return;
-		}
+	int x = data.length-1;
+	while(x>0){
+	    for(int i = 1; i<=x; i++){
+		if(data[i] < data[i-1]){
+			swap(data,i,x)
+       		}
+	    }
+	    x--;
 	}
-}
+    }
+	
 				
 		
 		
