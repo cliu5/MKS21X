@@ -57,7 +57,7 @@ public static void bubbleSort(int[] data){
 	while(x>0){
 	    for(int i = 1; i<=x; i++){
 		if(data[i] < data[i-1]){
-			swap(data,i,x)
+			swap(data,i,x);
        		}
 	    }
 	    x--;
