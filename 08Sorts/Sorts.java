@@ -78,7 +78,8 @@ public static void bubbleSort(int[] data){
                                                                                                                            
         System.out.println(Arrays.toString(randish));                               
              // selectionSort(randish); 
-	   insertionSort(randish);
+	   //insertionSort(randish);
+	  bubbleSort(randish);
         System.out.println(Arrays.toString(randish));                               
                                                                                     
     }                                                                               
