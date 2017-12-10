@@ -49,6 +49,8 @@ public static void insertionSort(int[] data){
 		swap(data, index,index-1);
 		index--;
 	}
+	}
+}
 	
 		
 		
