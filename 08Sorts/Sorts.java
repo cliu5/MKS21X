@@ -3,11 +3,24 @@ public class Sorts{
   public static String name(){
 	return "09.Liu.Claire"; 
     }
-  
-
 	
-    
-    
+    //Helpers//
+ public static boolean isSorted(int[]ary){                                       
+        for(int i = 0; i < ary.length - 1 ; i++){                                   
+            if(ary[i] > ary[i+1]){                                                  
+                return false;                                                       
+            }                                                                       
+        }                                                                           
+        return true;                                                                
+    }               
+	
+	private static void swap(int[]ary,int a, int b){
+    int c =ary[a];
+    ary[a] = ary[b];
+    ary[b] = c;
+}
+	
+    // 1. Selection Sort//
 public static void selectionSort(int[] data){
   int temp=0;
   int currentSmallest=0;
@@ -27,21 +40,8 @@ public static void selectionSort(int[] data){
 	}
   }
 
-	 public static boolean isSorted(int[]ary){                                       
-        for(int i = 0; i < ary.length - 1 ; i++){                                   
-            if(ary[i] > ary[i+1]){                                                  
-                return false;                                                       
-            }                                                                       
-        }                                                                           
-        return true;                                                                
-    }               
 	
-	private static void swap(int[]ary,int a, int b){
-    int c =ary[a];
-    ary[a] = ary[b];
-    ary[b] = c;
-}
-	
+    // 2. Insertion Sort//
 public static void insertionSort(int[] data){
 	for (int i=0;i<data.length;i++){
 		int index=i;
@@ -51,7 +51,8 @@ public static void insertionSort(int[] data){
 	}
 	}
 }
-	
+
+  // 3. Bubble Sort//
 public static void bubbleSort(int[] data){
 	int x = data.length-1;
 	while(x>0){
@@ -67,7 +68,7 @@ public static void bubbleSort(int[] data){
 				
 		
 		
-  
+  //Driver//
   public static void main(String[]artie){                                         
         int[] randish = new int[5];                                                
         for(int i = 0 ; i < randish.length; i++){                                   
@@ -76,8 +77,8 @@ public static void bubbleSort(int[] data){
                                                                                                                            
         System.out.println(Arrays.toString(randish));                               
              // selectionSort(randish); 
-	   //insertionSort(randish);
-	  bubbleSort(randish);
+	     //insertionSort(randish);
+	     //bubbleSort(randish);
         System.out.println(Arrays.toString(randish));                               
                                                                                     
     }                                                                               
