@@ -62,7 +62,7 @@ public static void bubbleSort(int[] data){
 			}
 		}
 		if (swapCount==0){
-			return data;
+			return;
 		}
 	}
 }
