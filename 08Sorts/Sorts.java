@@ -47,7 +47,7 @@ public static void insertionSort(int[] data){
 		int index=i;
 	while(index>0 &&data[index]<data[index-1]){
 		swap(data, index,index-1);
-		j--;
+		index--;
 	}
 	
 		
