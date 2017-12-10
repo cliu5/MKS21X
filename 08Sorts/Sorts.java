@@ -62,7 +62,8 @@ public static void insertionSort(int[] data){
         }                                                                           
                                                                                                                            
         System.out.println(Arrays.toString(randish));                               
-              selectionSort(randish);                                                  
+             // selectionSort(randish); 
+	   insertionSort(randish);
         System.out.println(Arrays.toString(randish));                               
                                                                                     
     }                                                                               
