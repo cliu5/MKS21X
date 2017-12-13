@@ -31,9 +31,11 @@ public class TemperatureWindow extends JFrame {
  if(event.equals("Convert!")){
   if(c.isSelected()){
    t.setText("test");
+	  System.out.println("please work");
   }
 	 else{
                 t.setText("What do you want?");
+		 System.out.println("please work~!!!!");
             }
     }
     }
