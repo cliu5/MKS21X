@@ -19,7 +19,7 @@ public class Window2 extends JFrame {
     
      b = new JButton("Convert!");
      t = new JTextField(12);
-     c = new JCheckBox("Farenheit?")
+     c = new JCheckBox("Farenheit?");
      pane.add(b);
      pane.add(t);
    pane.add(c);
@@ -31,7 +31,7 @@ public class Window2 extends JFrame {
    t.setText(FtoC(Double.parseDouble(t.getText)));
   }
     }
-  
+    }
 public static double CtoF(double t){
 	return 9 * t / 5 + 32;
     }
