@@ -27,7 +27,9 @@ public class TemperatureWindow extends JFrame {
  }
  public void actionPerformed(ActionEvent e){
 	 double x = Double.parseDouble(t.getText());
+	 
  String event=e.getActionCommand();
+	 System.out.println( event);
  if(event.equals("Convert!")){
 	 System.out.println("please work");
   if(c.isSelected()){
