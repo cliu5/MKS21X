@@ -26,7 +26,7 @@ public class Window2 extends JFrame {
  }
  public void actionPerformed(ActionEvent e){
  String event=e.getActionCommand();
- if(event.equals("Convert!"){
+ if(event.equals("Convert!")){
   if(c.isSelected()){
    t.setText(FtoC(Double.parseDouble(t.getText)));
   }
