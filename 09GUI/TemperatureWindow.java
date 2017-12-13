@@ -1,7 +1,7 @@
 
 import javax.swing.*;
 import java.awt.*;
-public class Window2 extends JFrame {
+public class TemperatureWindow extends JFrame {
  private Container pane;
 
  private JButton b;
@@ -9,7 +9,7 @@ public class Window2 extends JFrame {
   private JCheckBox c;
  
   //CONSTRUCTOR SETS EVERYTHING UP
-  public Window2() {
+  public TemperatureWindow() {
      this.setSize(600,400);
      this.setLocation(100,100);
      this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,7 +41,7 @@ public static double FtoC(double t){
 
   //MAIN JUST INSTANTIATES + MAKE VISIBLE
   public static void main(String[] args) {
-     Window2 g = new Window2();
+     TemperatureWindow g = new TemperatureWindow();
      g.setVisible(true);
   }
 }
