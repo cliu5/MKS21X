@@ -26,6 +26,7 @@ public class TemperatureWindow extends JFrame {
    pane.add(c);
  }
  public void actionPerformed(ActionEvent e){
+	
 	 double x = Double.parseDouble(t.getText());
 	 
  String event=e.getActionCommand();
