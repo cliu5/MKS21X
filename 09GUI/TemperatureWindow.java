@@ -26,10 +26,11 @@ public class TemperatureWindow extends JFrame {
    pane.add(c);
  }
  public void actionPerformed(ActionEvent e){
+	 double x = Double.parseDouble(t.getText());
  String event=e.getActionCommand();
  if(event.equals("Convert!")){
   if(c.isSelected()){
-   t.setText(FtoC(Double.parseDouble(t.getText())));
+   t.setText(FtoC(x));
   }
     }
     }
