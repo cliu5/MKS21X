@@ -1,6 +1,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 public class TemperatureWindow extends JFrame {
  private Container pane;
 
