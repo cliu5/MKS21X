@@ -30,7 +30,7 @@ public class TemperatureWindow extends JFrame {
  String event=e.getActionCommand();
  if(event.equals("Convert!")){
   if(c.isSelected()){
-   t.setText(FtoC(10));
+   t.setText("test");
   }
     }
     }
