@@ -32,6 +32,9 @@ public class TemperatureWindow extends JFrame {
   if(c.isSelected()){
    t.setText("test");
   }
+	 else{
+                t.setText("What do you want?");
+            }
     }
     }
 public static double CtoF(double t){
