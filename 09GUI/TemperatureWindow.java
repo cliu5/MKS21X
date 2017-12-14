@@ -8,7 +8,6 @@ public class TemperatureWindow extends JFrame implements ActionListener{
     private JTextField t;
 
     public void actionPerformed(ActionEvent e){
-	double x = Double.parseDouble(t.getText());
         String s = e.getActionCommand();
         System.out.println(s);
         if(s.equals("Convert")){
