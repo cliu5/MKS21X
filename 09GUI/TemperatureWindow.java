@@ -9,14 +9,13 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
 	 Double doubleVal = Double.parseDouble(t.getText());
-System.out.println(doubleVal);
         String s = e.getActionCommand();
         System.out.println(s);
         if(s.equals("Convert")){
             //button code here
             if( c.isSelected() ){
 		   
-                t.setText(FtoC(doubleVal));
+                t.setText(Double.toString(FtoC(doubleVal)));
             }else{
                 t.setText("Please type a valid number");
             }
