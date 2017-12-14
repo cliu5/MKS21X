@@ -10,7 +10,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
         String s = e.getActionCommand();
         System.out.println(s);
-        if(s.equals("ByteMe")){
+        if(s.equals("Converted!")){
             //button code here
             if( c.isSelected() ){
                 t.setText(t.getText().toUpperCase());
@@ -33,9 +33,9 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 
         pane = this.getContentPane();
         pane.setLayout(new FlowLayout());
-        b = new JButton("ByteMe");
+        b = new JButton("Converted");
         b2 = new JButton("Clear");
-        c = new JCheckBox("OverClocked");
+        c = new JCheckBox("Farenheit?");
         t = new JTextField(15);
 
         b.addActionListener(this);
