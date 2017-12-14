@@ -58,10 +58,10 @@ System.out.println(doubleVal);
         g.setVisible(true);
     }
 
-public static double CtoF(double t){
+public static Double CtoF(Double t){
 	return 9 * t / 5 + 32;
     }
-public static double FtoC(double t){
+public static Double FtoC(Double t){
 	return 5 * (t - 32) / 9;
 }
 }
