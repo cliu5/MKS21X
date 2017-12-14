@@ -36,7 +36,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
         pane.setLayout(new FlowLayout());
         b = new JButton("Convert");
         b2 = new JButton("Clear");
-        c = new JCheckBox("Farenheit?");
+        c = new JCheckBox("Farenheit to Celsius? (If C to F, don't check)");
         t = new JTextField(15);
 
         b.addActionListener(this);
