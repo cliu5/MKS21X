@@ -4,11 +4,29 @@ import java.awt.*;
 import java.awt.event.*;
 public class TemperatureWindow extends JFrame implements ActionListener{
  private Container pane;
-
  private JButton b;
  private JTextField t;
-  private JCheckBox c;
- 
+ private JCheckBox c;
+	
+	public void actionPerformed(ActionEvent e){
+		 double x = Double.parseDouble(t.getText());
+		String s=e.getActionCommand();
+		System.out.println(s);
+		 if(s.equals("Convert!")){
+            if( c.isSelected() ){
+                t.setText(t.getText().toUpperCase());
+            }else{
+                t.setText("What do you want?");
+            }
+        }
+        if(s.equals("Clear")){
+            //button code here
+            t.setText("");
+        }
+
+    }
+		
+		
   //CONSTRUCTOR SETS EVERYTHING UP
   public TemperatureWindow() {
      this.setSize(600,400);
@@ -25,25 +43,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
      pane.add(t);
    pane.add(c);
  }
- public void actionPerformed(ActionEvent e){
-	
-	 double x = Double.parseDouble(t.getText());
-	 
- String event=e.getActionCommand();
-	 System.out.println( event);
- if(event.equals("Convert!")){
-	 System.out.println("please work");
-  if(c.isSelected()){
-	  System.out.println("please work");
-   t.setText("test");
-	  System.out.println("please work");
-  }
-	 else{
-                t.setText("What do you want?");
-		 System.out.println("please work~!!!!");
-            }
-    }
-    }
+ 
 public static double CtoF(double t){
 	return 9 * t / 5 + 32;
     }
