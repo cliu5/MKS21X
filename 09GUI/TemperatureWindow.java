@@ -16,7 +16,7 @@ System.out.println(doubleVal);
             //button code here
             if( c.isSelected() ){
 		   
-                t.setText(t.getText().toUpperCase());
+                t.setText(FtoC(doubleVal));
             }else{
                 t.setText("Please type a valid number");
             }
