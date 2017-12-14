@@ -41,14 +41,12 @@ public class TemperatureWindow extends JFrame implements ActionListener{
         t = new JTextField(15);
 
         b.addActionListener(this);
-        b2.addActionListener(this);
         t.addActionListener(this);
         c.addActionListener(this);
 
         pane.add(t);
         pane.add(c);
         pane.add(b);
-        pane.add(b2);
 
     }
  
