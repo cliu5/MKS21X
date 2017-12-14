@@ -8,11 +8,13 @@ public class TemperatureWindow extends JFrame implements ActionListener{
     private JTextField t;
 
     public void actionPerformed(ActionEvent e){
+	double x = Double.parseDouble(t.getText());
         String s = e.getActionCommand();
         System.out.println(s);
         if(s.equals("Convert")){
             //button code here
             if( c.isSelected() ){
+		   
                 t.setText(t.getText().toUpperCase());
             }else{
                 t.setText("Please type a valid number");
@@ -55,6 +57,13 @@ public class TemperatureWindow extends JFrame implements ActionListener{
         g.setVisible(true);
     }
 }
+public static double CtoF(double t){
+	return 9 * t / 5 + 32;
+    }
+public static double FtoC(double t){
+	return 5 * (t - 32) / 9;
+}
+
 /*import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
