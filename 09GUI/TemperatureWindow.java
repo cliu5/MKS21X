@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class ButtonsWork extends JFrame implements ActionListener{
+public class TemperatureWindow extends JFrame implements ActionListener{
     private Container pane;
     private JButton b,b2;
     private JCheckBox c;
@@ -25,7 +25,7 @@ public class ButtonsWork extends JFrame implements ActionListener{
 
     }
 
-    public ButtonsWork() {
+    public TemperatureWindow() {
         this.setTitle("My first GUI");
         this.setSize(500,80);
         this.setLocation(100,100);
@@ -51,7 +51,7 @@ public class ButtonsWork extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        ButtonsWork g = new ButtonsWork();
+        TemperatureWindow g = new TemperatureWindow();
         g.setVisible(true);
     }
 }
