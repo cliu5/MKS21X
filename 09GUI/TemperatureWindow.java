@@ -2,7 +2,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class TemperatureWindow extends JFrame {
+public class TemperatureWindow extends JFrame implements ActionListener{
  private Container pane;
 
  private JButton b;
