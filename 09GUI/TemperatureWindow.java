@@ -15,7 +15,7 @@ public class TemperatureWindow extends JFrame implements ActionListener{
             if( c.isSelected() ){
                 t.setText(t.getText().toUpperCase());
             }else{
-                t.setText("What do you want?");
+                t.setText("Please type a valid number");
             }
         }
         if(s.equals("Clear")){
