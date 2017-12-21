@@ -22,20 +22,19 @@ public class Sorts{
 	
     // 1. Selection Sort//
 public static void selectionSort(int[] data){
-  int temp=0;
   int currentSmallest=0;
   int currentSmallestIndex=0;
 	for (int i = 0; i < data.length; i++){
-      	temp = data[i];
+	    int index=i;
+	    currentSmallestIndex=i;
 	currentSmallest = data[i];
-	    for (int x = i; x < data.length; x++){
+	    for (int x = i+1; x < data.length; x++){
 		    if (currentSmallest > data[x]){
 		    currentSmallest=data[x];
         		currentSmallestIndex=x;
 		     }
 	    }
-		data[currentSmallestIndex] = temp;
-	    data[i] = currentSmallest;
+	    swap(data,index,currentSmallestIndex);
 	    
 	}
   }
