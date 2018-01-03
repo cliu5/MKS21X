@@ -72,7 +72,7 @@ private String[] data;
     //Phase 2//
     //7.//
     private void resize(){
-	String[] temp = new String[size*2];
+	String[] temp = new String[size*2+1];
 	for (int i=0;i<size;i++){
 	    temp[i]=data[i];
         }
@@ -112,10 +112,8 @@ private String[] data;
     //10.//
 	  
     public void add(int index, String element){
-	    if (index==0 && element=="0"){
-		    data[0]=element;
-	    }
-	if (index<0||index>=size()){
+	   
+	if (index<0||index>size){
 	    throw new IndexOutOfBoundsException();
 	}
 	if(size>=data.length){
