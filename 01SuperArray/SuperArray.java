@@ -26,9 +26,9 @@ private String[] data;
     }
      //3.//
     public boolean add(String element){
-	if(size==data.length){
+	if(size>=data.length){
 		resize();
-	}
+	
 	    data[size]=element;
 	    size++;
 	    return true;
@@ -52,7 +52,9 @@ private String[] data;
 	}
     }
     //6.//
-    public String set(int index, String element){
+ 
+	
+	public String set(int index, String element){
 	String temp;
 	if (index<0||index>=size){
 	    throw new IndexOutOfBoundsException();
@@ -107,21 +109,19 @@ private String[] data;
 		
     }
     //10.//
+	  
     public void add(int index, String element){
-	if (index<0||index>size){
+	if (index<0||index>=size()){
 	    throw new IndexOutOfBoundsException();
 	}
-	if(index==size){
-	    add(element);
-	}
-	if (index<size){
+	if(size>=data.length){
 	    resize();
-	    size++;
-	    for (int i=size-1;i>index;i--){
-		data[i]=data[i-1];
-	    }
-	    data[index]=element;
 	}
+	for(int i=size;i>index;i--){
+		data[i]=data[i-1];
+	}
+	    data[index]=element;
+	    size++
     }
     //11.//
     public String remove(int index){
