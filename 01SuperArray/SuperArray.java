@@ -33,6 +33,7 @@ private String[] data;
 	    size++;
 	    return true;
     }
+    }
     //4.//
     public String toString(){
 	//Needed some help with this kept getting errors//
