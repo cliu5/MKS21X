@@ -112,6 +112,9 @@ private String[] data;
     //10.//
 	  
     public void add(int index, String element){
+	    if (index==0 && size()==0){
+		    data[0]=element;
+	    }
 	if (index<0||index>=size()){
 	    throw new IndexOutOfBoundsException();
 	}
