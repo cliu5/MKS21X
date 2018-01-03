@@ -28,11 +28,11 @@ private String[] data;
     public boolean add(String element){
 	if(size>=data.length){
 		resize();
-	
+	}
 	    data[size]=element;
 	    size++;
 	    return true;
-    }
+    
     }
     //4.//
     public String toString(){
