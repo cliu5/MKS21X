@@ -1,3 +1,4 @@
+public class Tester{
 public static void runTest02(int testID){
   
   if(testID<0){
@@ -106,8 +107,10 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
       return true;
     }
     return false;
-    
+}
       public static void main(String[] args){
 	  for (int i= 0;i<8;i++){
 runTest02(i);
   }
+      }
+      }
