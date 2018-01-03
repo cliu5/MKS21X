@@ -122,7 +122,7 @@ private String[] data;
 		data[i]=data[i-1];
 	}
 	    data[index]=element;
-	    size++
+	    size++;
     }
     //11.//
     public String remove(int index){
