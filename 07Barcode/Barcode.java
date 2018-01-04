@@ -9,7 +9,7 @@ public class Barcode implements Comparable<Barcode>{
 	  if(zip.length()==5){
 	  for (int x = 0; x < zip.length(); x++){
 		  //ppl helped me w this//
-	    if (!Character.isDigit(zip.charAt(i))){
+	    if (!Character.isDigit(zip.charAt(x))){
 		throw new IllegalArgumentException();
 	    }
 	}
@@ -20,7 +20,13 @@ public class Barcode implements Comparable<Barcode>{
 	}
 
 }
-	
+	 private static int CheckSum(String zip){
+    int sum = 0;
+    for (int i=0; i<zip.length(); i++){
+      sum += Integer.parseInt(zip.substring(i,i+1));
+    }
+    return sum % 10;
+  }
 
   public String toString(){
 	return getCode() + " (" + getZip() + ")";
@@ -116,7 +122,7 @@ private int zipToInt(){
 	
 	public String getCode(){
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-	String numbers=zip+ getCheckSum(zip);
+	String numbers=zip+ CheckSum(zip);
 	String ans = "|";
     
     for (int i = 0; i < numbers.length();i++){
