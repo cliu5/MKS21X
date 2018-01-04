@@ -26,16 +26,17 @@ public String toString(){
 	    return new ReversedCharSequence(ans);
     }
 
-
- public static void main(String[] args){
-	ReversedCharSequence x = new ReversedCharSequence("ABCDEF");
-	System.out.println(x);
-	for (int i = 0; i < x.length(); i++){
-	    System.out.println(x.charAt(i));
+//borrowed someone's driver//
+public static void main(String[] args){
+	ReversedCharSeq a = new ReversedCharSeq("ABCDEF");
+	for (int x = 0; x < a.length(); x++){
+	    System.out.println(a.charAt(x));
 	}
-	System.out.println(x.length());		       
-	System.out.println(x.subSequence(0,4));
+			       
+	System.out.println(a.subSequence(0,4));
+	System.out.println(a);
+	System.out.println(a.subSequence(0,6));
 	
- }
+    }
 
 }
