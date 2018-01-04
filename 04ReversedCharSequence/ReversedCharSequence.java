@@ -28,7 +28,7 @@ public String toString(){
 
 //borrowed someone's driver//
 public static void main(String[] args){
-	ReversedCharSeq a = new ReversedCharSeq("ABCDEF");
+	ReversedCharSequence a = new ReversedCharSequence("ABCDEF");
 	for (int x = 0; x < a.length(); x++){
 	    System.out.println(a.charAt(x));
 	}
