@@ -92,29 +92,45 @@ private int zipToInt(){
     return bus[Integer.parseInt(str)];
   }
 
-
+  public static String ConvertNumber(String code){
+	  //given a code make it the corresponding int//
+	  // this was kinda confusing at first but all u do is loop thru the bus variable and if it matches return the int//
+	  
+	  String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+    for (int i=0;i<bus.length;i++){
+      if (code.equals(bus[i])){
+        return "" + i;
+      }
+    }
+    throw new IllegalArgumentException();
+  }
 	
 	//dis was hard + needed help//
 	public static String toZip(String code){
-		if (frontendBarlength(code)&&checkSum(code)){
-	    throw new IllegalArgumentException();
-	}
-		code=code.substring(1,31);
-		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		String ans="";
-		ArrayList<String> TEMP = new ArrayList<String>();
-		for (int x = 0; x < 10; x++){
-	    		TEMP.add(bus[x]);
-		}
-			for (int i=0;i<25;i++){
-	    			int  n = TEMP.indexOf(code.substring(i, i + 5));
-				if (n == -1){
-					throw new IllegalArgumentException();
-	    			}
-				ans+=n;
-				i+=4;
-			}
-		return ans;
+		//first make sure length and first last are correct//
+		if (code.length() != 32){
+      throw new IllegalArgumentException();
+    }
+    if (!(code.charAt(0)=='|' && code.charAt(31)=='|')){
+      throw new IllegalArgumentException();
+    }
+		
+		
+    String ans = "";
+    for (int i=1;i<27;i+=5){
+      ans += ConvertNumber(code.substring(i,i+5));
+    }
+	//check if checksum is right//	
+    int sum = 0;
+    for (int i=0;i<5;i++){
+      sum += Integer.parseInt(ans.substring(i,i+1));
+    }
+    if (sum % 10 == Integer.parseInt(ans.substring(5,6))){
+      return ans.substring(0,5);
+    }
+		//otherwise throw//
+    throw new IllegalArgumentException();
+  }
 	}
 
 				
