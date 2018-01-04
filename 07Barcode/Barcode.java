@@ -6,23 +6,24 @@ public class Barcode implements Comparable<Barcode>{
 	
 	
   public Barcode(String zip){
+	  if(zip.length()==5){
 	  for (int x = 0; x < zip.length(); x++){
 		  //ppl helped me w this//
-	    if ("0123456789".indexOf(zip.substring(x,x+1)) == -1){
+	    if (!Character.isDigit(zip.charAt(i))){
 		throw new IllegalArgumentException();
 	    }
 	}
-	if (zip.length() != 5){
+	this.zip=zip;
+	  }
+	  else{
 	    throw new IllegalArgumentException();
 	}
-    
-    this.zip=zip;
 
 }
 	
 
   public String toString(){
-	return getCode() + " (" + zip + ")";
+	return getCode() + " (" + getZip() + ")";
     }
 	
 	// make compare to easier//
@@ -31,19 +32,22 @@ private int zipToInt(){
     }
 
     public int compareTo(Barcode other){
-	return zipToInt() - other.zipToInt() ;
+	return zip.compareTo(other.getZip());
     }
 
     public static String toCode(String zip){
-	    Barcode x=new Barcode(zip);
-	    for (int i = 0; i < zip.length(); i++){
-		  //ppl helped me w this//
-	    if ("0123456789".indexOf(zip.substring(i,i+1)) == -1){
-		throw new IllegalArgumentException();
-	    }
-	}
-	    
-	    
+	    //added this bc it wasn't throwing properly//
+	      if (zip.length() == 5){
+      for (int i=0; i<zip.length();i++){
+        if (!Character.isDigit(zip.charAt(i))){
+          throw new IllegalArgumentException();
+        }
+      }
+    }
+    else {
+      throw new IllegalArgumentException();
+    }
+    Barcode x=new Barcode(zip);
 	    return x.getCode();
     }
 	
@@ -77,6 +81,12 @@ private int zipToInt(){
 		return code.length() != 32 || code.charAt(0) != '|' || code.charAt(code.length() - 1) != '|';
 	}
 	
+	private static String ConvertWeird(String str){
+		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+    return bus[Integer.parseInt(str)];
+  }
+
+
 	
 	//dis was hard + needed help//
 	public static String toZip(String code){
@@ -103,21 +113,18 @@ private int zipToInt(){
 
 				
 	
-
-
 	
 	public String getCode(){
 		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+	String numbers=zip+ getCheckSum(zip);
 	String ans = "|";
-    	int check = 0;
-    for (int i = 0; i < zip.length();i++){
-      int temp = Integer.valueOf(zip.charAt(i)+"");
-      check += temp;
-      ans+=bus[temp];
-    }
-    ans += bus[check%10] + "|";
-	return ans;
+    
+    for (int i = 0; i < numbers.length();i++){
+      ans+=ConvertWeird(numbers.substring(i,i+1));
   }
+	ans+="|";
+	return ans;
+}
 	
 	
     public String getZip(){
