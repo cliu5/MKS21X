@@ -48,7 +48,7 @@ private int zipToInt(){
 		String numbers = zip + CheckSum(zip);
     String ans = "|";
     for (int x=0; x<num.length();x++){
-      ans += ConvertWeird(num.substring(x,x+1));
+      ans += ConvertWeird(numbers.substring(x,x+1));
     }
     ans += "|";
     return ans;
