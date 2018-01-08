@@ -12,11 +12,8 @@ public static void main(String[] args){
     System.out.println(jerry.compareTo(serry));
     System.out.println(jerry.compareTo(merry));
    
-    System.out.println(legit("|::||::|:::|:|:|::::||::|:||"));
     System.out.println("----");
-    System.out.println(legit("|::||::||::|:|||:|:|:|::::||::|:|"));
-    System.out.println(legit("|::||::||::|:::|:|:|::::||::|:|"));
-    System.out.println(legit(lerry.getCode()));
+   
     System.out.println(jerry.getZip());
     System.out.println(toZip(jerry.getCode()));
     Barcode y = new Barcode("11133");
