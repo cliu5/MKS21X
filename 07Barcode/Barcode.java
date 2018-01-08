@@ -2,7 +2,7 @@
 import java.util.*;
 import java.io.*;
 public class Barcode implements Comparable<Barcode>{
-  private String zip;
+  public String zip;
 	
 	
   public Barcode(String zip){
