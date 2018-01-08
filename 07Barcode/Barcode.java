@@ -58,7 +58,7 @@ private int zipToInt(){
 	return zip.compareTo(other.getZip());
     }
 
-    public static String toCode(String zip){
+    public static String getCode(String zip){
 	    //added this bc it wasn't throwing properly//
 	      if (zip.length() == 5){
       for (int i=0; i<zip.length();i++){
