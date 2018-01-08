@@ -29,7 +29,7 @@ public class Barcode implements Comparable<Barcode>{
   }
 
   public String toString(){
-	return toCode() + " (" + getZip() + ")";
+	return getCode() + " (" + getZip() + ")";
     }
 	
 
@@ -44,7 +44,7 @@ public class Barcode implements Comparable<Barcode>{
 private int zipToInt(){
 	return Integer.parseInt(zip);
     }
-	public String toCode(){
+	public String getCode(){
 		String numbers = zip + CheckSum(zip);
     String ans = "|";
     for (int x=0; x<numbers.length();x++){
