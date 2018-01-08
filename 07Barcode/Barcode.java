@@ -53,34 +53,20 @@ private int zipToInt(){
     else {
       throw new IllegalArgumentException();
     }
-    Barcode x=new Barcode(zip);
-	    return x.getCode();
+    
+	    String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+	String numbers=zip+ CheckSum(zip);
+	String ans = "|";
+    
+    for (int i = 0; i < numbers.length();i++){
+      ans+=ConvertWeird(numbers.substring(i,i+1));
+  }
+	ans+="|";
+	return ans;
     }
 	
-	//find the coded version of an int to help with throwing stuff for toZip//
-	private static boolean checkSum(String code){
-		code = code.substring(1, 31);
-		int tot=0;
-		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25;i+=5){
-			int  x = code.indexOf(code.substring(i, i + 5));
-			tot+=x;}
-		return code.substring(25,30).equals(bus[tot%10]);
-	}
 	
-	private static boolean allCode(String code){
-		code = code.substring(1, 31);
-		boolean ans = true;
-		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-		for (int i=0;i<25;i+=5){
-			int  x = code.indexOf(code.substring(i, i + 5));
-	    		if (x == -1){
-				ans=false;
-			}
-		}
-		return ans;
 	
-	}
 	
 	//more boolean methods to help with organizing throw if statements//
 	private static boolean frontendBarlength(String code){
@@ -99,7 +85,7 @@ private int zipToInt(){
 	  String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
     for (int i=0;i<bus.length;i++){
       if (code.equals(bus[i])){
-        return "" + i;
+        return i+"";
       }
     }
     throw new IllegalArgumentException();
@@ -136,17 +122,9 @@ private int zipToInt(){
 				
 	
 	
-	public String getCode(){
-		String[] bus = {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-	String numbers=zip+ CheckSum(zip);
-	String ans = "|";
-    
-    for (int i = 0; i < numbers.length();i++){
-      ans+=ConvertWeird(numbers.substring(i,i+1));
-  }
-	ans+="|";
-	return ans;
-}
+	
+		
+
 	
 	
     public String getZip(){
