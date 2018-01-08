@@ -29,13 +29,22 @@ public class Barcode implements Comparable<Barcode>{
   }
 
   public String toString(){
-	return getCode() + " (" + getZip() + ")";
+	toCode() + " (" + getZip() + ")";
     }
 	
 	// make compare to easier//
 private int zipToInt(){
 	return Integer.parseInt(zip);
     }
+	public String toCode(){
+		String numbers = zip + CheckSum(zip);
+    String ans = "|";
+    for (int x=0; x<num.length();x++){
+      ans += ConvertWeird(num.substring(x,x+1));
+    }
+    ans += "|";
+    return ans;
+  }
 
     public int compareTo(Barcode other){
 	return zip.compareTo(other.getZip());
