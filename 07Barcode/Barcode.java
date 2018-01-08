@@ -29,8 +29,16 @@ public class Barcode implements Comparable<Barcode>{
   }
 
   public String toString(){
-	toCode() + " (" + getZip() + ")";
+	return toCode() + " (" + getZip() + ")";
     }
+	
+
+	
+	
+	
+	
+	
+	
 	
 	// make compare to easier//
 private int zipToInt(){
